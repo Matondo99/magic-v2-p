@@ -1,0 +1,6 @@
+# Don't track .json files in .vscode directory
+.vscode/*.json
+
+design/*.jpg
+
+design/*.fig
