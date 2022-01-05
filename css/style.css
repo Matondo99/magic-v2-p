@@ -92,7 +92,7 @@ h1 span {
 }
 
 .container {
-  padding: 6rem 6rem;
+  padding: 3rem 2rem;
 }
 
 .hero-grid {
@@ -150,6 +150,12 @@ h1 span {
 
 .gridizer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.75rem;
+}
+
+@media all and (min-width: 560px) {
+  .container {
+    padding: 5rem 6rem;
+  } 
 }
