@@ -33,9 +33,39 @@ p {
   margin: 0;
 }
 
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 /* Utility classes */
 .flow-content > * + * {
   margin-top: 1.25rem;
+}
+
+.split > * + * {
+  margin-top: 1.75rem;
+}
+
+.flowy-content > * + * {
+  margin-top: .25rem;
+}
+
+@media all and (min-width: 640px) {
+  .mastering ul > * + * ,
+  .join-now ul > * + * {
+    margin: 0 0 0 1.25rem;
+  } 
+  .split > * + * {
+    margin: 0 0 0 1.75rem;
+  }
+}
+
+.dark-bg {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900, #000);
 }
 
 /* general styling */
@@ -48,12 +78,26 @@ body {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 h1 {
   font-weight: 400;
 }
 
 h1 span {
   font-weight: 700;
+}
+
+.mastering h2 {
+  color: var(--clr-accent-400);
+}
+
+.join-now h3 {
+  text-align: center;
 }
 
 .btn {
@@ -67,4 +111,90 @@ h1 span {
   padding: 0.75em 1.5em;
   background-color: var(--clr-accent-400);
   color: var(--clr-neutral-900);
+  transition: background-color 650ms 150ms, color 650ms 150ms;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: var(--clr-accent-500);
+  color: var(--clr-neutral-100);
+}
+
+.container {
+  width: 85%;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+@media all and (min-width: 640px) {
+  section {
+    padding: 6rem 0;
+  }
+}
+
+.hero-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (min-width: 640px) {
+  .hero-flex {
+    flex-direction: row;
+  }
+  .hero img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cta {
+  background: url(../images/cta-bg.jpg) center/cover no-repeat;
+  text-align: center;
+}
+
+.cta .container > * {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.join-now li {
+  position: relative;
+}
+
+.join-now li::before {
+  content: "";
+  display: block;
+  background-color: var(--clr-accent-400);
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  z-index: -10;
+  left: 50%;
+  transform: translate(-85%, -.5rem);
+}
+
+.join-now img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media all and (min-width: 640px) {
+  .join-now li::before {
+    left: 0%;
+    transform: translate(-.5rem, -.5rem);
+  }
+  
+  .join-now img {
+    margin: 0;
+  }
+  
+  .join-now h3 {
+    text-align: left;
+  }
 }
